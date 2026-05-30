@@ -1,0 +1,61 @@
+# Lab: Managing Software Packages in Linux
+
+## Project Overview
+This lab is part of the **Google Cybersecurity Professional Certificate**. The objective was to practice software package management on a Linux distribution using the Advanced Package Tool (`apt`). I successfully managed installations, verified software status, handled uninstallation, and resolved package states using the command-line interface (CLI).
+
+## Skills Demonstrated
+* Linux Command Line Interface (CLI)
+* Package Management (`apt`)
+* Network Security Tool Deployment (`tcpdump` & `suricata`)
+* System Verification & Filtering (`grep`)
+
+---
+
+## Lab Execution & Evidence
+
+### Step 1: Initial Software Verification
+I began by launching `suricata` to verify its initial installation status on the system.
+* **Command Used:** `suricata --version` (or tool execution command)
+* **Evidence:** *[Insert Screenshot 1 Here]*
+
+### Step 2: Removing a Package
+To practice uninstallation and clean up system resources, I removed the `suricata` package.
+* **Command Used:** `sudo apt remove suricata`
+* **Evidence:** *[Insert Screenshot 2 Here]*
+
+### Step 3: Installing a New Network Tool
+Next, I installed `tcpdump`, a critical command-line packet analyzer used for network security monitoring.
+* **Command Used:** `sudo apt install tcpdump`
+* **Evidence:** *[Insert Screenshot 3 Here]*
+
+### Step 4: System Auditing (First Pass)
+I generated a complete list of all installed packages on the system to prepare for validation.
+* **Command Used:** `apt list --installed`
+* **Evidence:** *[Insert Screenshot 4 Here]*
+
+### Step 5: Verifying Tcpdump Installation
+I filtered the package list to explicitly confirm that `tcpdump` was successfully active on the system.
+* **Command Used:** `apt list --installed | grep tcpdump`
+* **Evidence:** *[Insert Screenshot 5 Here]*
+
+### Step 6: Reinstalling Suricata
+To simulate a multi-tool security environment, I reinstalled the `suricata` intrusion detection system package.
+* **Command Used:** `sudo apt install suricata`
+* **Evidence:** *[Insert Screenshot 6 Here]*
+
+### Step 7: System Auditing (Second Pass)
+I pulled the updated list of installed packages to ensure the system configuration changed correctly.
+* **Command Used:** `apt list --installed`
+* **Evidence:** *[Insert Screenshot 7 Here]*
+
+### Step 8: Final Environment Validation
+I ran a final check confirming that both `tcpdump` and `suricata` were concurrently installed and ready for security operations.
+* **Command Used:** `apt list --installed | grep -E "tcpdump|suricata"`
+* **Evidence:** *[Insert Screenshot 8 Here]*
+
+---
+
+## Key Takeaways
+1. **Repository Management:** Learned how `apt` syncs with remote repositories to fetch stable security tools.
+2. **Tool Auditing:** Mastering `grep` filtering with `apt list` is essential for security analysts to quickly audit systems for unauthorized or missing software.
+3. **Environment Control:** Gained hands-on experience installing and purging signatures/sniffers, a foundational skill for setting up security monitoring onions or defensive workstations.
